@@ -22,4 +22,23 @@ public class Helper {
         }
         System.out.println();
     }
+
+    public static void prettyPrint(ListNode head) {
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + SPACE);
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    public static ListNode convertIntegerArrayToLinkedList(int[] arr) {
+        ListNode res = new ListNode();
+        ListNode head = res;
+        for (int ele : arr) {
+            head.next = new ListNode(ele);
+            head = head.next;
+        }
+        return res.next;
+    }
 }
