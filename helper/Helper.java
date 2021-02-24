@@ -8,6 +8,9 @@ public class Helper {
     private static final String COMMA = ",";
 
     public static int[] parseStringToIntegerArray(String input) {
+        if (input.equals("[]")) {
+            return new int[0];
+        }
         String[] tokens = input.split(",");
         return Arrays.stream(tokens).mapToInt(x -> Integer.parseInt(x.trim().replace("[", "").replace("]", ""))).toArray();
     }
